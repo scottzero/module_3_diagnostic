@@ -15,6 +15,20 @@ require 'rails-helper'
 # - The Patronus of the member (if it exists)
 RSpec.describe "as a user searching house members", type: :feature do
     it "shows me a list of house members with details and total count" do
-      visit "/"
+
+    visit "/"
+    
+    select "Griffindor", from: :house
+
+    click_on 'Search For Members'
+
+    expect(current_path).to eq(search_path)
+
+    expect(page).to have_content("18")
+
+    within(".members") do
+      expect(page).to have_css(".name")
+      expect(page).to have_css(".role")
+      expect(page).to have_css(".house")
+      expect(page).to have_css(".patronus")
     end
-  end 
