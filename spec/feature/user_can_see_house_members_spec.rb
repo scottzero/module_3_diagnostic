@@ -1,4 +1,4 @@
-require 'rails-helper'
+require 'rails_helper'
 # As a user,
 # When I visit "/"
 # And I Select "Griffindor" from the select field
@@ -17,14 +17,14 @@ RSpec.describe "as a user searching house members", type: :feature do
     it "shows me a list of house members with details and total count" do
 
     visit "/"
-    
-    select "Griffindor", from: :house
+
+    select "Gryffindor", from: :house
 
     click_on 'Search For Members'
 
     expect(current_path).to eq(search_path)
 
-    expect(page).to have_content("18")
+    expect(page).to have_content("21")
 
     within(".members") do
       expect(page).to have_css(".name")
@@ -32,3 +32,5 @@ RSpec.describe "as a user searching house members", type: :feature do
       expect(page).to have_css(".house")
       expect(page).to have_css(".patronus")
     end
+  end
+end
