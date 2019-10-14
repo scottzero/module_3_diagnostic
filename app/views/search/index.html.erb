@@ -1,9 +1,2 @@
 <p><%= @members.count %> Members In this house. </p>
-<section class="members">
-  <% @members.each do |member| %>
-    <p class="name"><%= member.name %></p>
-    <p class="role"><%= member.role %></p>
-    <p class="party"><%= member.house %></p>
-    <p class="district"><%= member.patronus %></p>
-  <% end %>
-</section>
+<p><%= @members %> <p>

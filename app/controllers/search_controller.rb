@@ -1,11 +1,13 @@
 class SearchController < ApplicationController
 
   def index
-    @members = search_members(params[:house])
+    potters  = PotterApiService.new
+    @members = potters.house_info
     # binding.pry
   end
 
-  def search_members(house)
-    potter_api_service = PotterApiService.new(house)
-    member_data = potter_api_service.get_members
+  def search_members
+    potter_api_service = PotterApiService.new
+    member_data = potter_api_service.house_info
   end
+end

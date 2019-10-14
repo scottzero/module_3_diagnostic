@@ -24,13 +24,46 @@ RSpec.describe "as a user searching house members", type: :feature do
 
     expect(current_path).to eq(search_path)
 
-    expect(page).to have_content("21")
-
-    within(".members") do
-      expect(page).to have_css(".name")
-      expect(page).to have_css(".role")
-      expect(page).to have_css(".house")
-      expect(page).to have_css(".patronus")
+    expect(page).to have_content("40")
+    expect(page).to have_content(["Katie Bell",
+ "Cuthbert Binns",
+ "Sirius Black",
+ "Lavender Brown",
+ "Colin Creevey",
+ "Dennis Creevey",
+ "Aberforth Dumbledore",
+ "Albus Dumbledore",
+ "Seamus Finnigan",
+ "Hermione Granger",
+ "Godric Gryffindor",
+ "Rubeus Hagrid",
+ "Angelina Johnson",
+ "Lee Jordan",
+ "Alice Longbottom",
+ "Frank Longbottom",
+ "Augusta Longbottom",
+ "Neville Longbottom",
+ "Remus Lupin",
+ "Parvati Patil",
+ "Peter Pettigrew",
+ "Harry Potter",
+ "James Potter I",
+ "Lily J. Potter",
+ "Demelza Robins",
+ "Alicia Spinnet",
+ "Dean Thomas",
+ "Romilda Vane",
+ "Arthur Weasley",
+ "William Weasley",
+ "Charles Weasley",
+ "Fred Weasley",
+ "George Weasley",
+ "Ginevra Weasley",
+ "Molly Weasley",
+ "Percy Weasley",
+ "Ronald Weasley",
+ "Oliver Wood",
+ "Cadogan",
+ "Nicholas de Mimsy-Porpington"])
     end
   end
-end
